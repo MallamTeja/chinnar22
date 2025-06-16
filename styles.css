@@ -261,10 +261,12 @@ body {
 
 .stat-num {
     font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--accent-orange);
 }
 
 .stat-label {
     font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    color: var(--white);
 }
 
 /* Sections */
@@ -616,8 +618,37 @@ footer {
 }
 
 /* Secondary text */
-.client-logo, .stat-label, .brand-sub {
-    color: var(--text-secondary) !important;
+.client-logo, .brand-sub {
+    color: var(--text-secondary);
+}
+
+/* White text on blue background */
+.hero-content,
+footer,
+.nav-links a[href="#contact"],
+.nav-links a[href="#about"],
+.nav-links a[href="#products"],
+.nav-links a[href="#services"],
+.nav-links a[href="#clients"] {
+    color: var(--white);
+}
+
+/* Override specific elements that should keep their original color */
+.hero-content .highlight {
+    color: var(--accent-orange);
+}
+
+.stat-num {
+    color: var(--accent-orange);
+}
+
+/* Footer specific styles */
+footer .social-links a {
+    color: var(--white);
+}
+
+footer .social-links a:hover {
+    color: var(--accent-orange);
 }
 
 /* Responsive Design */
