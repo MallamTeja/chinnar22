@@ -21,6 +21,18 @@ body {
     background: var(--primary-bg);
     padding-top: 70px;
     font-size: 1.12rem;
+    animation: fadeInBody 0.7s ease-in;
+}
+
+@keyframes fadeInBody {
+    from {
+        opacity: 0.7;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .container {
@@ -444,5 +456,71 @@ footer {
     
     .contact-info {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Clients & Affiliations Cards Styling */
+.clients .grid > div {
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.clients .grid > div:hover {
+    box-shadow: 0 8px 32px rgba(0,51,102,0.13);
+    transform: translateY(-4px) scale(1.025);
+}
+.clients .w-16.h-16 {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.clients .w-16.h-16 span {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.clients a.font-bold {
+    color: #003366;
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.18s;
+}
+.clients a.font-bold:hover {
+    color: #23864d;
+    text-decoration: underline;
+}
+.clients .text-sm {
+    color: #5F6368;
+    font-size: 0.98rem;
+    text-align: center;
+    margin-top: 0.2rem;
+}
+@media (max-width: 900px) {
+    .clients .grid {
+        gap: 1.5rem;
+    }
+    .clients .grid > div {
+        padding: 2rem 1rem;
+    }
+}
+@media (max-width: 600px) {
+    .clients .grid {
+        grid-template-columns: 1fr !important;
+    }
+    .clients .grid > div {
+        padding: 1.2rem 0.5rem;
     }
 } 
