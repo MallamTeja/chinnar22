@@ -20,6 +20,7 @@ body {
     color: var(--text-main);
     background: var(--primary-bg);
     padding-top: 70px;
+    font-size: 1.12rem;
 }
 
 .container {
@@ -102,7 +103,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     font-weight: 700;
     margin-bottom: 18px;
     line-height: 1.15;
@@ -113,6 +114,10 @@ body {
     color: var(--accent-orange);
     font-size: 3rem;
     font-weight: 700;
+}
+
+.hero-content p, .hero-sub, section p {
+    font-size: 1.25rem;
 }
 
 .hero-sub {
@@ -162,9 +167,10 @@ body {
 }
 
 .stat-label {
-    font-size: 1rem;
-    color: var(--white);
-    opacity: 0.85;
+    font-size: 1.1rem;
+    color: var(--accent-orange);
+    opacity: 1;
+    font-weight: 500;
 }
 
 /* Nav Links */
@@ -198,7 +204,7 @@ section h2 {
     text-align: center;
     color: var(--secondary-blue);
     margin-bottom: 40px;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
 }
 
 /* Core Business */
@@ -364,13 +370,22 @@ footer {
         padding: 0 16px;
     }
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     .hero-content .highlight {
         font-size: 2.2rem;
     }
     .hero-stats {
         gap: 24px;
+    }
+    body {
+        font-size: 1rem;
+    }
+    section h2 {
+        font-size: 2rem;
+    }
+    .hero-content p, .hero-sub, section p {
+        font-size: 1.05rem;
     }
 }
 
@@ -390,6 +405,18 @@ footer {
     .hero-stats {
         flex-direction: column;
         gap: 10px;
+    }
+    body {
+        font-size: 0.97rem;
+    }
+    .hero-content h1 {
+        font-size: 1.4rem;
+    }
+    section h2 {
+        font-size: 1.2rem;
+    }
+    .hero-content p, .hero-sub, section p {
+        font-size: 0.97rem;
     }
 }
 
