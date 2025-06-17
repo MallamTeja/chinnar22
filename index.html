@@ -11,12 +11,15 @@
 <body>
     <!-- Header/Nav -->
     <header class="hero">
-        <nav class="main-nav">
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
             <div class="nav-left">
-                <img src="log.png" alt="Chinar Scientific Industries Logo" class="logo-img">
+                <img src="logo.png" alt="Chinar Scientific Industries Logo" class="logo-img">
                 <span class="brand-name">Chinar Scientific <span class="brand-sub">Industries</span></span>
             </div>
-            <div class="nav-links">
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links" id="nav-links">
                 <a href="#about">About</a>
                 <a href="#products">Products</a>
                 <a href="#services">Services</a>
@@ -24,6 +27,7 @@
                 <a href="#contact">Contact</a>
             </div>
         </nav>
+        <div class="nav-overlay"></div>
         <!-- Hero Section -->
         <div class="hero-content">
             <h1>Innovating Education <br><span class="highlight">Since 1984</span></h1>
