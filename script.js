@@ -105,18 +105,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Simulate form submission (replace with actual API call)
                 await new Promise(resolve => setTimeout(resolve, 1500));
                 
-                // Show success message
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
+                // Show success message on the button itself
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Thank you, we will reach out to you';
+                
+                // Revert button text and reset form after a delay
+                setTimeout(() => {
+                    submitButton.textContent = originalButtonText;
+                    contactForm.reset();
+                }, 3000); // Message visible for 3 seconds
                 
             } catch (error) {
-                // Show error message
-                alert('Sorry, there was an error sending your message. Please try again.');
+                // Show error message using createToast (or alert if createToast is not defined)
+                if (typeof createToast === 'function') {
+                    createToast('Sorry, there was an error sending your message. Please try again.', 'error');
+                } else {
+                    alert('Sorry, there was an error sending your message. Please try again.');
+                }
                 
             } finally {
-                // Remove loading state
-                submitButton.classList.remove('loading');
-                submitButton.disabled = false;
+                // Remove loading state (only for error case, success handles its own reset)
+                if (error) {
+                    submitButton.classList.remove('loading');
+                    submitButton.disabled = false;
+                }
             }
         });
     }

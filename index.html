@@ -2,18 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chinar Scientific Industries</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Scientific Industries</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="enhancements.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        html {
+            scroll-padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+        
+        /* Sticky Section Headers */
+        .section-header {
+            position: sticky;
+            top: 60px;
+            background: var(--white);
+            padding: 1rem 0;
+            z-index: 10;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        @media (min-width: 768px) {
+            .section-header {
+                top: 70px;
+            }
+        }
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--accent-orange);
+            text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Toast Notification Styles */
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .toast {
+            background: var(--white);
+            color: var(--text-main);
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transform: translateX(120%);
+            transition: transform 0.3s ease;
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        .toast.success {
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .toast.error {
+            border-left: 4px solid #f44336;
+        }
+    </style>
 </head>
 <body>
     <!-- Header/Nav -->
     <header class="hero">
         <nav class="main-nav" role="navigation" aria-label="Main navigation">
             <div class="nav-left">
-                <img src="log.png" alt="Chinar Scientific Industries Logo" class="logo-img">
+                <img src="log.png" alt="Chinar Scientific Industries Logo" class="logo-img" loading="lazy">
                 <span class="brand-name"> Scientific <span class="brand-sub">Industries</span></span>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
@@ -29,244 +108,289 @@
         </nav>
         <div class="nav-overlay"></div>
         <!-- Hero Section -->
-        <div class="hero-content">
-            <h1>Innovating Education <br><span class="highlight">Since 1984</span></h1>
-            <p class="hero-sub">Trusted partners for STEM, ICT &amp; EdTech Solutions across India.</p>
-            <div class="cta-buttons">
+        <div class="hero-content max-w-7xl mx-auto px-4">
+            <h1 class="text-[clamp(1.2rem,2vw,2rem)]" data-aos="fade-up">Innovating Education <br><span class="highlight">Since 1984</span></h1>
+            <p class="hero-sub" data-aos="fade-up" data-aos-delay="100">Trusted partners for STEM, ICT &amp; EdTech Solutions across India.</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
                 <a href="#products" class="explore-btn">Explore Solutions</a>
             </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-num">40+</span>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat" data-aos="fade-up" data-aos-delay="400">
+                    <span class="stat-num" data-count="40">0</span><span class="stat-plus">+</span>
                     <span class="stat-label">Years of Excellence</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-num">1000+</span>
+                <div class="stat" data-aos="fade-up" data-aos-delay="500">
+                    <span class="stat-num" data-count="10">0</span><span class="stat-plus">+</span>
                     <span class="stat-label">Schools Transformed</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-num">500+</span>
+                <div class="stat" data-aos="fade-up" data-aos-delay="600">
+                    <span class="stat-num" data-count="8">0</span><span class="stat-plus">+</span>
                     <span class="stat-label">Projects Delivered</span>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>Established in 1984, Chinar Scientific Industries is a government-approved, ISO 9001:2015-certified organization. We specialize in setting up STEM labs, ICT solutions, training, and turnkey educational project execution across India.</p>
-            
-            <div class="core-business">
-                <h3>Our Core Business</h3>
-                <p>We work as resellers, implementing agencies, and system integrators for government IT projects.</p>
-                <p>We serve departments under the <strong>Ministry of Education, Ministry of Science & Technology, Ministry of Health, and Ministry of Women & Child Development</strong> — delivering end-to-end ICT lab infrastructure, devices, and training.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>What We Do</h2>
-            <p class="section-desc">
-              Comprehensive educational technology solutions designed to transform learning environments and empower institutions with modern infrastructure.
-            </p>
-            <div class="service-cards">
-                <div class="service-card">
-                    <img src="System Integration.png" alt="System Integration" class="card-img">
-                    <h3>System Integration</h3>
-                    <p>Complete ICT infrastructure setup and seamless technology integration for educational institutions</p>
-                </div>
-                <div class="service-card">
-                    <img src="Educational Kits Supply.png" alt="Educational Kits Supply" class="card-img">
-                    <h3>Educational Kits Supply</h3>
-                    <p>Comprehensive STEM kits, educational materials, and laboratory equipment for enhanced learning</p>
-                </div>
-                <div class="service-card">
-                    <img src="Training & Implementation.png" alt="Training & Implementation" class="card-img">
-                    <h3>Training & Implementation</h3>
-                    <p>Expert training programs and hands-on implementation support for educators and students</p>
+    <main role="main">
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container max-w-7xl mx-auto px-4">
+                <h2 class="text-[clamp(1.2rem,2vw,2rem)]" data-aos="fade-up">About Us</h2>
+                <p class="text-xl md:text-3xl lg:text-4xl leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="100">Established in 1984, Chinar Scientific Industries is a government-approved, ISO 9001:2015-certified organization. We specialize in setting up STEM labs, ICT solutions, training, and turnkey educational project execution across India.</p>
+                
+                <div class="core-business" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Our Core Business</h3>
+                    <p>We work as resellers, implementing agencies, and system integrators for government IT projects.</p>
+                    <p>We serve departments under the <strong>Ministry of Education, Ministry of Science & Technology, Ministry of Health, and Ministry of Women & Child Development</strong> — delivering end-to-end ICT lab infrastructure, devices, and training.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <h2>Product Offerings</h2>
-            <p class="section-desc">
-              Complete range of educational technology products and infrastructure solutions designed to modernize learning environments across India.
-            </p>
-            <div class="product-grid">
-                <div class="product-card">
-                   
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container max-w-7xl mx-auto px-4">
+                <h2 class="text-[clamp(1.2rem,2vw,2rem)]" data-aos="fade-up">What We Do</h2>
+                <p class="section-desc" data-aos="fade-up" data-aos-delay="100">
+                  Comprehensive educational technology solutions designed to transform learning environments and empower institutions with modern infrastructure.
+                </p>
+                <div class="service-cards">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="System Integration.png" alt="System Integration" class="card-img" loading="lazy">
+                        <h3>System Integration</h3>
+                        <p>Complete ICT infrastructure setup and seamless technology integration for educational institutions</p>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="Educational Kits Supply.png" alt="Educational Kits Supply" class="card-img" loading="lazy">
+                        <h3>Educational Kits Supply</h3>
+                        <p>Comprehensive STEM kits, educational materials, and laboratory equipment for enhanced learning</p>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="Training & Implementation.png" alt="Training & Implementation" class="card-img" loading="lazy">
+                        <h3>Training & Implementation</h3>
+                        <p>Expert training programs and hands-on implementation support for educators and students</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container max-w-7xl mx-auto px-4">
+                <h2 class="text-[clamp(1.2rem,2vw,2rem)]" data-aos="fade-up">Product Offerings</h2>
+                <p class="section-desc" data-aos="fade-up" data-aos-delay="100">
+                  Complete range of educational technology products and infrastructure solutions designed to modernize learning environments across India.
+                </p>
+                <div class="product-grid">
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="ICT Equipment.jpg" alt="ICT Equipment" class="card-img" loading="lazy">
+                        <h3>ICT Equipment</h3>
+                        <ul>
+                          <li>Laptops, Desktops, Interactive Flat Panels for modern classrooms</li>
+                          <li>High-Performance Laptops</li>
+                          <li>Desktop Computers</li>
+                          <li>Interactive Flat Panels</li>
+                          <li>Networking Equipment</li>
+                        </ul>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-headphones"></i>
+                        <h3>Accessories</h3>
+                        <ul>
+                          <li>Essential audio-visual accessories for enhanced learning experiences</li>
+                          <li>Professional Microphones</li>
+                          <li>HD Cameras</li>
+                          <li>Audio Adapters</li>
+                          <li>Connectivity Solutions</li>
+                        </ul>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-flask"></i>
+                        <h3>Educational Kits</h3>
+                        <ul>
+                          <li>Comprehensive STEM and educational learning kits</li>
+                          <li>STEM Laboratory Kits</li>
+                          <li>Vedic Mathematics Tools</li>
+                          <li>Teaching Learning Materials</li>
+                          <li>Science Experiment Sets</li>
+                        </ul>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+                        <i class="fas fa-chair"></i>
+                        <h3>Furniture</h3>
+                        <ul>
+                          <li>Ergonomic and durable furniture for educational environments</li>
+                          <li>School Desks & Chairs</li>
+                          <li>Laboratory Benches</li>
+                          <li>Storage Solutions</li>
+                          <li>Modular Classroom Furniture</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section id="clients" class="clients py-16 bg-[#F4F6F8]">
+            <div class="container max-w-7xl mx-auto px-4">
+                <h2 class="text-[clamp(1.2rem,2vw,2rem)] text-center text-[#003366] mb-4" data-aos="fade-up">Clients & Affiliations</h2>
+                <p class="text-center text-[#5F6368] mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Trusted by leading educational institutions and government organizations across India.<br>Our partnerships reflect our commitment to excellence in educational technology.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                    <!-- NCERT -->
+                    <div class="client-card-link bg-white rounded-xl shadow p-8 flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-white text-2xl font-bold">N</span>
+                        </div>
+                        <a href="https://ncert.nic.in/" target="_blank" rel="noopener noreferrer" class="font-bold text-lg text-[#003366] mb-1 text-center hover:underline">NCERT</a>
+                        <a href="https://ncert.nic.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#5F6368] text-center hover:underline">National Council of Educational Research and Training</a>
+                    </div>
+                    <!-- EdCIL -->
+                    <div class="client-card-link bg-white rounded-xl shadow p-8 flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-white text-2xl font-bold">E</span>
+                        </div>
+                        <a href="https://www.edcilindia.co.in/" target="_blank" rel="noopener noreferrer" class="font-bold text-lg text-[#003366] mb-1 text-center hover:underline">EdCIL</a>
+                        <a href="https://www.edcilindia.co.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#5F6368] text-center hover:underline">Educational Consultants India Limited</a>
+                    </div>
+                    <!-- Vigyan Prasar -->
+                    <div class="client-card-link bg-white rounded-xl shadow p-8 flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-white text-2xl font-bold">V</span>
+                        </div>
+                        <a href="https://vigyanprasar.gov.in/" target="_blank" rel="noopener noreferrer" class="font-bold text-lg text-[#003366] mb-1 text-center hover:underline">Vigyan Prasar</a>
+                        <a href="https://vigyanprasar.gov.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#5F6368] text-center hover:underline">Department of Science & Technology</a>
+                    </div>
+                    <!-- Ministry of Education -->
+                    <div class="client-card-link bg-white rounded-xl shadow p-8 flex flex-col items-center" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-white text-2xl font-bold">M</span>
+                        </div>
+                        <a href="https://www.education.gov.in/" target="_blank" rel="noopener noreferrer" class="font-bold text-lg text-[#003366] mb-1 text-center hover:underline">Ministry of Education</a>
+                        <a href="https://www.education.gov.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#5F6368] text-center hover:underline">Government of India Educational Initiatives</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reach Section -->
+        <section id="reach" class="reach">
+            <div class="container max-w-7xl mx-auto px-4">
+                <h2 class="text-[clamp(1.2rem,2vw,2rem)]" data-aos="fade-up">Our Reach</h2>
+                <p class="reach-desc" data-aos="fade-up" data-aos-delay="100">Serving educational institutions across multiple states and union territories in India with comprehensive technology solutions and support.</p>
+                <div class="reach-grid">
+                    <div class="reach-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="reach-region">Delhi</div>
+                    </div>
+                    <div class="reach-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="reach-region">Jammu & Kashmir</div>
+                    </div>
+                    <div class="reach-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="reach-region">Uttarakhand</div>
+                    </div>
+                    <div class="reach-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="reach-region">Andhra Pradesh</div>
+                    </div>
+                    <div class="reach-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="reach-region">Uttar Pradesh</div>
+                    </div>
+                    <div class="reach-card" data-aos="fade-up" data-aos-delay="700">
+                        <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="reach-region">Nagaland</div>
+                    </div>
+                    <div class="reach-card" data-aos="fade-up" data-aos-delay="800">
+                        <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="reach-region">Assam</div>
+                    </div>
+                    <div class="reach-card" data-aos="fade-up" data-aos-delay="900">
+                        <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="reach-region">Chhattisgarh</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
+                <p class="section-desc" data-aos="fade-up" data-aos-delay="100">Ready to transform your educational institution? Contact us today to discuss your requirements and discover how we can help you achieve your educational technology goals.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-info-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="contact-info-label">Contact Information</h3>
+                        <div class="contact-info-block">
+                            <div class="contact-info-item">
+                                <span class="contact-icon email"><i class="fas fa-envelope"></i></span> 
+                                <span class="contact-info-text">
+                                    <span class="contact-info-title">Email</span><br>
+                                    <a href="mailto:chinarscientific@gmail.com">chinarscientific@gmail.com</a>
+                                </span>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon phone"><i class="fas fa-phone"></i></span> 
+                                <span class="contact-info-text">
+                                    <span class="contact-info-title">Phone</span><br>
+                                    <a href="tel:+919999504015">+91 9999504015</a>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <h3 class="contact-info-label offices">Our Offices</h3>
+                        <div class="contact-offices-block">
+                            <div class="office-card">
+                                <span class="contact-icon office"><i class="fas fa-map-marker-alt"></i></span> 
+                                <span class="office-info">
+                                    <span class="office-title">Head Office</span><br>
+                                    N-63, Pratap Nagar, Delhi 110007
+                                </span>
+                            </div>
+                            <div class="office-card">
+                                <span class="contact-icon office"><i class="fas fa-map-marker-alt"></i></span> 
+                                <span class="office-info">
+                                    <span class="office-title">Warehouse</span><br>
+                                    Badli, Delhi
+                                </span>
+                            </div>
+                            <div class="office-card">
+                                <span class="contact-icon office"><i class="fas fa-map-marker-alt"></i></span> 
+                                <span class="office-info">
+                                    <span class="office-title">Branch Office</span><br>
+                                    Jammu & Kashmir – 180013
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <img src="ICT Equipment.jpg" alt="ICT Equipment" class="card-img">
-                    <h3>ICT Equipment</h3>
-                    <ul>
-                      <li>Laptops, Desktops, Interactive Flat Panels for modern classrooms</li>
-                      <li>High-Performance Laptops</li>
-                      <li>Desktop Computers</li>
-                      <li>Interactive Flat Panels</li>
-                      <li>Networking Equipment</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <i class="fas fa-headphones"></i>
-                    <h3>Accessories</h3>
-                    <ul>
-                      <li>Essential audio-visual accessories for enhanced learning experiences</li>
-                      <li>Professional Microphones</li>
-                      <li>HD Cameras</li>
-                      <li>Audio Adapters</li>
-                      <li>Connectivity Solutions</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <i class="fas fa-flask"></i>
-                    <h3>Educational Kits</h3>
-                    <ul>
-                      <li>Comprehensive STEM and educational learning kits</li>
-                      <li>STEM Laboratory Kits</li>
-                      <li>Vedic Mathematics Tools</li>
-                      <li>Teaching Learning Materials</li>
-                      <li>Science Experiment Sets</li>
-                    </ul>
-                </div>
-                <div class="product-card">
-                    <i class="fas fa-chair"></i>
-                    <h3>Furniture</h3>
-                    <ul>
-                      <li>Ergonomic and durable furniture for educational environments</li>
-                      <li>School Desks & Chairs</li>
-                      <li>Laboratory Benches</li>
-                      <li>Storage Solutions</li>
-                      <li>Modular Classroom Furniture</li>
-                    </ul>
-                </div>
+                    <div class="contact-form-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="contact-form-title">Contact us</h3>
+                        <form class="contact-form" role="form">
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required aria-label="Full Name" minlength="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone-number">Phone Number</label>
+                                <input type="tel" id="phone-number" name="phone-number" placeholder="Enter your phone number" aria-label="Phone Number" pattern="[0-9]*" inputmode="numeric" minlength="7" maxlength="15">
+                            </div>
+                            <div class="form-group">
+                                <label for="email-address">Email Address</label>
+                                <input type="email" id="email-address" name="email-address" placeholder="Enter your email address" required aria-label="Email Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Contact Us</label>
+                                <textarea id="message" name="message" placeholder="Tell us about your requirements..." required aria-label="Contact Us" minlength="10"></textarea>
+                            </div>
+                            <button type="submit" class="btn primary" aria-label="Send Message">Submit</button>
+                        </form>
+                    </div>
+                </div>image.png
             </div>
-        </div>
-    </section>
-
-    <!-- Clients Section -->
-    <section id="clients" class="clients py-16 bg-[#F4F6F8]">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-[#003366] mb-4">Clients & Affiliations</h2>
-            <p class="text-center text-[#5F6368] mb-10 max-w-2xl mx-auto">Trusted by leading educational institutions and government organizations across India.<br>Our partnerships reflect our commitment to excellence in educational technology.</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-                <!-- NCERT -->
-                <div class="client-card-link bg-white rounded-xl shadow p-8 flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                        <span class="text-white text-2xl font-bold">N</span>
-                    </div>
-                    <a href="https://ncert.nic.in/" target="_blank" rel="noopener noreferrer" class="font-bold text-lg text-[#003366] mb-1 text-center hover:underline">NCERT</a>
-                    <a href="https://ncert.nic.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#5F6368] text-center hover:underline">National Council of Educational Research and Training</a>
-                </div>
-                <!-- EdCIL -->
-                <div class="client-card-link bg-white rounded-xl shadow p-8 flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                        <span class="text-white text-2xl font-bold">E</span>
-                    </div>
-                    <a href="https://www.edcilindia.co.in/" target="_blank" rel="noopener noreferrer" class="font-bold text-lg text-[#003366] mb-1 text-center hover:underline">EdCIL</a>
-                    <a href="https://www.edcilindia.co.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#5F6368] text-center hover:underline">Educational Consultants India Limited</a>
-                </div>
-                <!-- Vigyan Prasar -->
-                <div class="client-card-link bg-white rounded-xl shadow p-8 flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                        <span class="text-white text-2xl font-bold">V</span>
-                    </div>
-                    <a href="https://vigyanprasar.gov.in/" target="_blank" rel="noopener noreferrer" class="font-bold text-lg text-[#003366] mb-1 text-center hover:underline">Vigyan Prasar</a>
-                    <a href="https://vigyanprasar.gov.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#5F6368] text-center hover:underline">Department of Science & Technology</a>
-                </div>
-                <!-- Ministry of Education -->
-                <div class="client-card-link bg-white rounded-xl shadow p-8 flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                        <span class="text-white text-2xl font-bold">M</span>
-                    </div>
-                    <a href="https://www.education.gov.in/" target="_blank" rel="noopener noreferrer" class="font-bold text-lg text-[#003366] mb-1 text-center hover:underline">Ministry of Education</a>
-                    <a href="https://www.education.gov.in/" target="_blank" rel="noopener noreferrer" class="text-sm text-[#5F6368] text-center hover:underline">Government of India Educational Initiatives</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reach Section -->
-    <section class="reach">
-        <div class="container">
-            <h2>Our Reach</h2>
-            <p class="reach-desc">Serving educational institutions across multiple states and union territories in India with comprehensive technology solutions and support.</p>
-            <div class="reach-grid">
-                <div class="reach-card">
-                    <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="reach-region">Delhi</div>
-                </div>
-                <div class="reach-card">
-                    <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="reach-region">Jammu & Kashmir</div>
-                </div>
-                <div class="reach-card">
-                    <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="reach-region">Uttarakhand</div>
-                </div>
-                <div class="reach-card">
-                    <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="reach-region">Andhra Pradesh</div>
-                </div>
-                <div class="reach-card">
-                    <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="reach-region">Uttar Pradesh</div>
-                </div>
-                <div class="reach-card">
-                    <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="reach-region">Nagaland</div>
-                </div>
-                <div class="reach-card">
-                    <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="reach-region">Assam</div>
-                </div>
-                <div class="reach-card">
-                    <div class="reach-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="reach-region">Chhattisgarh</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p class="contact-desc">Ready to transform your educational institution? Contact us today to discuss your requirements and discover how we can help you achieve your educational technology goals.</p>
-            <div class="contact-grid">
-                <div class="contact-info-card">
-                    <div class="contact-info-block">
-                        <div class="contact-info-label">Contact Information</div>
-                        <div class="contact-info-item"><span class="contact-icon email"><i class="fas fa-envelope"></i></span> <span class="contact-info-text"><span class="contact-info-title">Email</span><br><a href="mailto:chinarscientific@gmail.com">chinarscientific@gmail.com</a></span></div>
-                        <div class="contact-info-item"><span class="contact-icon phone"><i class="fas fa-phone"></i></span> <span class="contact-info-text"><span class="contact-info-title">Phone</span><br><a href="tel:+919999504015">+91 9999504015</a></span></div>
-                    </div>
-                    <div class="contact-offices">
-                        <div class="contact-info-label">Our Offices</div>
-                        <div class="office-card"><span class="contact-icon office"><i class="fas fa-map-marker-alt"></i></span> <span class="office-info"><span class="office-title">Head Office</span><br>N-63, Pratap Nagar, Delhi 110007</span></div>
-                        <div class="office-card"><span class="contact-icon office"><i class="fas fa-map-marker-alt"></i></span> <span class="office-info"><span class="office-title">Warehouse</span><br>Badli, Delhi</span></div>
-                        <div class="office-card"><span class="contact-icon office"><i class="fas fa-map-marker-alt"></i></span> <span class="office-info"><span class="office-title">Branch Office</span><br>Jammu & Kashmir – 180013</span></div>
-                    </div>
-                </div>
-                <div class="contact-form-card">
-                    <div class="contact-form-title">Send us a Message</div>
-                    <form class="contact-form">
-                        <label>Full Name<input type="text" placeholder="Enter your full name" required></label>
-                        <label>Phone Number<input type="tel" placeholder="Enter your phone number"></label>
-                        <label>Email Address<input type="email" placeholder="Enter your email address" required></label>
-                        <label>Message<textarea placeholder="Tell us about your requirements..." required></textarea></label>
-                        <button type="submit" class="btn primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -281,6 +405,132 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <div class="toast-container" id="toastContainer"></div>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Navigation active state
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('section[id]');
+
+            function setActiveLink() {
+                const scrollPosition = window.scrollY;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Set active link on scroll
+            window.addEventListener('scroll', setActiveLink);
+            
+            // Set active link on click
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Set initial active state
+            setActiveLink();
+        });
+
+        // Count up animation
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Intersection Observer for stats
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNum = entry.target;
+                    const count = parseInt(statNum.getAttribute('data-count'));
+                    animateValue(statNum, 0, count, 2000);
+                    observer.unobserve(statNum);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-num').forEach(stat => {
+            observer.observe(stat);
+        });
+
+        // Toast Notification Function
+        function createToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            const container = document.getElementById('toastContainer');
+            container.appendChild(toast);
+            
+            // Trigger animation
+            setTimeout(() => toast.classList.add('show'), 100);
+            
+            // Remove toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Form submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Your form submission logic here
+            createToast("Message sent successfully!", "success");
+        });
+
+        // Progressive Enhancement for AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if AOS is available
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    disable: 'phone' // Disable on mobile for better performance
+                });
+            } else {
+                // Fallback for when AOS is not available
+                document.querySelectorAll('[data-aos]').forEach(element => {
+                    element.classList.add('animate-fade-in');
+                });
+            }
+        });
+    </script>
 </body>
 </html> 
